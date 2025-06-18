@@ -1,0 +1,255 @@
+[
+  {
+    "name": "Jalapenos Nachos",
+    "description": "Doritos Nachos, Poulet Kebab, Cheddar, Jalapños, Tomates en dés, Sauce Tomates, Mozzarella",
+    "price": 20.10,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20250512134948432.png",
+    "ingredients": [
+      "Poulet Kebab",
+      "Dés de tomates",
+      "Jalapenos",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Margherita",
+    "description": "L'originale pizza de base, avec une sauce tomate et de la mozzarella",
+    "price": 14.00,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163450743.jpg",
+    "ingredients": [
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Falafel",
+    "description": "Boulettes de falafel, coulis de basilic, tomates en dés, persil, sauce tomate, fromage vegan Violife",
+    "price": 20.10,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20230310155103630.png",
+    "ingredients": [
+      "Dés de tomates",
+      "Fromage vegan Violife",
+      "Ball falafel"
+    ]
+  },
+  {
+    "name": "Pepperoni Lovers",
+    "description": "Pepperoni en généreuse quantité sur une base tomate et mozzarella",
+    "price": 15.00,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163536901.jpg",
+    "ingredients": [
+      "Pepperoni",
+      "Fromage mozzarella",
+      "Champignons"
+    ]
+  },
+  {
+    "name": "Garden Lovers",
+    "description": "Champignons, poivrons verts, dés de tomates, oignons rouges, mozzarella et sauce tomate",
+    "price": 16.00,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163156337.jpg",
+    "ingredients": [
+      "Poivron vert",
+      "Dés de tomates",
+      "Oignons rouges",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Forestiere",
+    "description": "Jambon, champignons, dés de tomates, mozzarella et sauce tomate",
+    "price": 16.00,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163123958.jpg",
+    "ingredients": [
+      "Jambon",
+      "Champignons",
+      "Dés de tomates",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Hawaiian",
+    "description": "La douceur de l'ananas accompagnée de jambon, champignons, mozzarella et sauce tomate",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163251534.jpg",
+    "ingredients": [
+      "Jambon",
+      "Champignons",
+      "Ananas",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Cheesam",
+    "description": "Beaucoup de mozzarella, jambon et de la sauce tomate",
+    "price": 15.00,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163026887.jpg",
+    "ingredients": [
+      "Jambon",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Hot 'n Spicy",
+    "description": "Viande de boeuf épicée, piments verts, oignons rouges, dés de tomates, mozzarella et sauce tomate",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163326415.jpg",
+    "ingredients": [
+      "Viande de boeuf épicée",
+      "Piments verts",
+      "Dés de tomates",
+      "Oignons rouges",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Barbecue Chicken",
+    "description": "Dés de poulet grillé, champignons, poivrons verts, oignons rouges, mozzarella et sauce barbecue",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406162902485.jpg",
+    "ingredients": [
+      "Poulet grillé",
+      "Champignons",
+      "Poivron vert",
+      "Oignons rouges",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Barbecue",
+    "description": "Double portion de viande de boeuf épicée, tranches de bacon fumé, oignons rouges, mozzarella et sauce barbecue",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406162828439.jpg",
+    "ingredients": [
+      "Viande de boeuf épicée",
+      "Bacon fumé",
+      "Oignons rouges",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Alsace",
+    "description": "Lardons fumés, oignons rouges, champignons, sauce à l'ail, mozzarella, sauce tomate",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406162803685.jpg",
+    "ingredients": [
+      "Lardons fumés",
+      "Champignons",
+      "Oignons rouges",
+      "Fromage mozzarella",
+      "Sauce à l'ail"
+    ]
+  },
+  {
+    "name": "Suprême",
+    "description": "Viande de boeuf épicée, pepperoni, champignons, poivron vert, oignon, mozzarella et sauce tomate",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163730364.jpg",
+    "ingredients": [
+      "Viande de boeuf épicée",
+      "Pepperoni",
+      "Champignons",
+      "Poivron vert",
+      "Oignons rouges",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Pepper",
+    "description": "Double portion de viande de boeuf, dés de tomates, oignons rouges, sauce au poivre, mozzarella et sauce tomate",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220712145325983.jpg",
+    "ingredients": [
+      "Viande de boeuf épicée",
+      "Dés de tomates",
+      "Oignons rouges",
+      "Fromage mozzarella",
+      "Sauce au poivre",
+      "Poulet Kebab"
+    ]
+  },
+  {
+    "name": "Chicken Twist",
+    "description": "Poulet kebab (halal), dés de tomates, oignons rouges, sauce à l'ail douce, mozzarella, sauce tomate",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163057498.jpg",
+    "ingredients": [
+      "Poulet grillé",
+      "Dés de tomates",
+      "Ananas",
+      "Fromage mozzarella",
+      "Sauce à l'ail douce"
+    ]
+  },
+  {
+    "name": "Sweet Chicken Curry",
+    "description": "",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220504090424606.jpg",
+    "ingredients": [
+      "Sauce curry douce",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Pick & Mix",
+    "description": "Devenez le chef cuisto et composez votre pizza: sauce tomate, mozzarella +3 garnitures au choix.",
+    "price": 18.60,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163353600.jpg",
+    "ingredients": [
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "4 Fromages",
+    "description": "Emmental, fromage de chèvre, Fourme d'Ambert AOP, mozzarella et crème épaisse",
+    "price": 20.10,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20250129162352075.jpg",
+    "ingredients": [
+      "Fromage mozzarella",
+      "Fromage de chèvre",
+      "Emmental",
+      "Fourme d'Ambert"
+    ]
+  },
+  {
+    "name": "Grimbergen",
+    "description": "Jambon italien \"parme\", champignons, mozzarella, crème épaisse et fromage d'abbaye Grimbergen",
+    "price": 20.10,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163225127.jpg",
+    "ingredients": [
+      "Jambon italien",
+      "Champignons",
+      "Fromage mozzarella",
+      "Fromage d'abbaye Grimbergen"
+    ]
+  },
+  {
+    "name": "Super Supreme",
+    "description": "Viande de boeuf, viande de porc épicée, jambon, pepperoni, oignons rouges, champignons, poivron vert, olives noires, mozzarella et sauce tomate",
+    "price": 20.10,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20240820094140285.jpg",
+    "ingredients": [
+      "Viande de boeuf épicée",
+      "Viande de porc",
+      "Jambon",
+      "Pepperoni",
+      "Champignons",
+      "Poivron vert",
+      "Olives noires",
+      "Oignons rouges",
+      "Fromage mozzarella"
+    ]
+  },
+  {
+    "name": "Thon",
+    "description": "Thon, oignons rouges, olives noires, persil, sauce tomate, mozzarella",
+    "price": 20.10,
+    "image": "https://cdn-catalog.pizzahut.be/images/be/20220406164029214.jpg",
+    "ingredients": [
+      "Thon",
+      "Olives noires",
+      "Oignons rouges",
+      "Fromage mozzarella"
+    ]
+  }
+]
