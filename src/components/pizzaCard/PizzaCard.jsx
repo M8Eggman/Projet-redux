@@ -9,12 +9,12 @@ export default function PizzaCard({ pizza }) {
       <div className="pizzaCardContent">
         <h3>{pizza.name}</h3>
         <p>{pizza.description}</p>
-        <div className="pizzaCardFooter">
-          <span>
-            à partir de <b>€{pizza.price.toFixed(2).replace(".", ",")}</b>
-          </span>
-          <button>+</button>
-        </div>
+      </div>
+      <div className="pizzaCardFooter">
+        <span>
+          à partir de <b>€{pizza.price.toFixed(2).replace(".", ",")}</b>
+        </span>
+        <button>+</button>
       </div>
     </div>
   );
