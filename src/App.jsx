@@ -6,11 +6,11 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element>
-          <Route index element={AccueilPizza} />
-          <Route path="/:custom" element />
+        <Route path="/">
+          <Route index element={<AccueilPizza />} />
+          {/* <Route path="/:custom" element />
           <Route path="/validation" element />
-          <Route path="/remerciement" element />
+          <Route path="/remerciement" element /> */}
         </Route>
       </Routes>
     </>

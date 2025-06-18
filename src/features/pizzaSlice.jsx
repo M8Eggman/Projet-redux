@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import pizzas from "../data/pizzas.json";
 
 const initialState = {
-  pizzas,
+  allPizzas: pizzas,
   panier: [],
 };
 
