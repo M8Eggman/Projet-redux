@@ -1,16 +1,17 @@
-import "./App.css";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Layout from "./layout/Layout";
+
+// Pages
+// import Home from "./pages/Home";
+// import Custom from "./pages/Custom";
+// import Validation from "./pages/Validation";
+// import Remerciement from "./pages/Remerciement";
+
 export default function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element>
-          <Route index element/>
-          <Route path="/:custom" element/>
-          <Route path="/validation" element/>
-          <Route path="/remerciement" element/>
-        </Route>
-      </Routes>
-    </>
+   <Layout/>
+  
   );
 }

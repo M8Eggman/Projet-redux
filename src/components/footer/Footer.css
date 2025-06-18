@@ -1,0 +1,16 @@
+/* Footer.css */
+
+.footer {
+  background-color: #b80000; /* rouge vif assorti à la nav */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif; /* si tu utilises cette police */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -3px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
