@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { pizzas } from "../data/pizzas.json";
+import pizzas from "../data/pizzas.json";
 
 const initialState = {
   pizzas,
@@ -12,5 +12,5 @@ const pizzaSlice = createSlice({
   reducers: {},
 });
 
-export const {} = maSlice.actions;
+export const {} = pizzaSlice.actions;
 export const pizzaReducer = pizzaSlice.reducer;
