@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import AccueilPizza from "./pages/AccueilPizza";
+import AccueilPizza from "./pages/AccueilPizza/AccueilPizza";
 
 export default function App() {
   return (
