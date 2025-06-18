@@ -1,17 +1,18 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import Layout from "./layout/Layout";
-
-// Pages
-// import Home from "./pages/Home";
-// import Custom from "./pages/Custom";
-// import Validation from "./pages/Validation";
-// import Remerciement from "./pages/Remerciement";
+import AccueilPizza from "./pages/AccueilPizza/AccueilPizza";
 
 export default function App() {
   return (
-   <Layout/>
-  
+    <>
+      <Routes>
+        <Route path="/">
+          <Route index element={<AccueilPizza />} />
+          {/* <Route path="/:custom" element />
+          <Route path="/validation" element />
+          <Route path="/remerciement" element /> */}
+        </Route>
+      </Routes>
+    </>
   );
 }
