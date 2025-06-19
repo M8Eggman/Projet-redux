@@ -13,14 +13,17 @@
   z-index: 1000;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   height: 50px;
+  font-family: "Ubuntu", sans-serif;
 }
 
+/* Logo */
 .logo-img {
   height: 35px;
   width: auto;
   cursor: pointer;
 }
 
+/* Liens navigation */
 .nav-links {
   list-style: none;
   display: flex;
@@ -51,6 +54,7 @@
   text-decoration: underline;
 }
 
+/* Section droite */
 .right-section {
   display: flex;
   align-items: center;
@@ -84,3 +88,82 @@
 .chevron {
   font-size: 0.7rem;
 }
+
+/* ============ TABLETTE ============ */
+@media (max-width: 1024px) {
+  .navbar {
+    padding-inline: 40px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .se-connecter {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* -------- Menu Burger -------- */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links,
+  .right-section {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    background-color: #c8102e;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    transition: transform 0.3s ease;
+    transform: translateY(-200%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-links.active,
+  .right-section.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
