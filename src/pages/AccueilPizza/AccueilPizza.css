@@ -33,15 +33,15 @@
   margin-bottom: 20px;
 }
 
-.sectionHeader .line {
+.sectionHeader > .line {
   flex-grow: 1;
   height: 2px;
-  background-color: #dfdfe3;
+  background-color: #dfdfe3 !important;
 }
 
-.sectionHeader .title {
+.sectionHeader > .title {
   font-weight: 100;
-  font-size: 1rem;
-  color: #747474;
+  font-size: 1rem !important;
+  color: #747474 !important;
   white-space: nowrap;
 }
