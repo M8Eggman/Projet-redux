@@ -1,12 +1,12 @@
 /* Footer.css */
 .footer {
-  background-color: #b80000; 
+  background-color: #c8102e;
   color: white;
   text-align: center;
   padding: 10px 0;
   font-weight: 600;
-  font-family: 'Ubuntu', sans-serif; 
+  font-family: "Ubuntu", sans-serif;
   width: 100%;
-  box-shadow: 0 -3px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
