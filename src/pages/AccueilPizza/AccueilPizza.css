@@ -8,7 +8,7 @@
 }
 .accueilPizzas {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 30px;
   flex: 1 1 auto;
 }
@@ -44,4 +44,20 @@
   font-size: 1rem !important;
   color: #747474 !important;
   white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .accueilPizzas {
+    gap: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .accueilPizzas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 375px) {
+  .accueilPizzas {
+    gap: 10px;
+  }
 }

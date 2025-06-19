@@ -15,8 +15,18 @@ body {
   background-color: #f5f7f9;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   html {
     font-size: 15px;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 13px;
   }
 }

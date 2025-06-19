@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import "./PizzaCard.css";
-import { ajouterPanier } from "../../features/pizzaSlice";
 import { useNavigate } from "react-router-dom";
 
 export default function PizzaCard({ pizza }) {

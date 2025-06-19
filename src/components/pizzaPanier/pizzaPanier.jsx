@@ -31,7 +31,7 @@ export default function PizzaPanier({ changeStyle }) {
   const totalAvecLivraison = total + (panier.length > 0 ? livraison : 0);
 
   return (
-    <div className="pizzaPanier">
+    <div className={changeStyle ? "pizzaPanier pizzaPanierDetails" : "pizzaPanier pizzaPanierAccueil"}>
       <div className="pizzaPanierHeader">
         <h2>Panier d'achat</h2>
         <div className="pizzaPanierAllPizzas" style={changeStyle ? { maxHeight: "280px" } : {}}>
@@ -101,7 +101,7 @@ export default function PizzaPanier({ changeStyle }) {
           )}
           <button
             disabled={totalAvecLivraison < 15}
-            onClick ={ ()=> navigate ('/validation')}
+            onClick={() => navigate("/validation")}
             style={{
               opacity: totalAvecLivraison < 15 ? "0.5" : "1",
               cursor: totalAvecLivraison < 15 ? "not-allowed" : "pointer",
