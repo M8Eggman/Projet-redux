@@ -1,6 +1,6 @@
 import "./Ingredients.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
@@ -22,49 +22,52 @@ export default function Ingredients() {
     setIngredients((prev) => prev.map((i) => (i.name === name ? { ...i, quantity: i.quantity + nbr } : i)));
   }
 
-  return selectedPizza ? (
-    <div className="ingredientsPage">
-      <div className="pizzaImage">
-        <img src={selectedPizza.image} alt="" />
-      </div>
-      <div className="ingredientsPanel">
-        <h1>
-          {selectedPizza.name}
-          <span>€{selectedPizza.price.toFixed(2).replace(".", ",")}</span>
-        </h1>
-        <p className="pizzaDesc">{selectedPizza.description}</p>
-        <div className="bloc">
-          <div className="ingredientsListHeader">
-            <h3>Ingrédients</h3>
-            <span className="chevron">&#8964;</span>
+  return (
+    <section className="sectionIngredients">
+      <button onClick={"/"}>Retour</button>
+      {selectedPizza ? (
+        <div className="">
+          <div className="ingredientImage">
+            <img src={selectedPizza.image} alt="" />
           </div>
-          <ul>
-            {ingredients.map((ing) => (
-              <li key={ing.name} className="ingredientRow">
-                <span className="ingredientIcon">{/* ajout une icone si jai pas la flemme */}</span>
-                <span className="ingredientName">{ing.name}</span>
-                <button className="ingredientBtn" onClick={() => handleIngredientQuantity(ing.name, -1)} disabled={ing.quantity <= 0}>
-                  <FontAwesomeIcon icon={faMinus} />
-                </button>
-                <span className="ingredientQty">{ing.quantity}</span>
-                <button className="ingredientBtn" onClick={() => handleIngredientQuantity(ing.name, 1)} disabled={ing.quantity >= 2}>
-                  <FontAwesomeIcon icon={faPlus} />
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div className="ingredients">
+            <h1>
+              {selectedPizza.name} <span>€{selectedPizza.price.toFixed(2).replace(".", ",")}</span>
+            </h1>
+            <p>{selectedPizza.description}</p>
+            <div className="">
+              <div className="ingredientsListHeader">
+                <h3>Ingrédients</h3> <FontAwesomeIcon icon={faChevronDown} />
+              </div>
+              <ul>
+                {ingredients.map((ing) => (
+                  <li key={ing.name}>
+                    <span className="ingredientIcon">{/* ajout une icone si jai pas la flemme */}</span>
+                    <span className="ingredientName">{ing.name}</span>
+                    <button className="ingredientButton" onClick={() => handleIngredientQuantity(ing.name, -1)} disabled={ing.quantity <= 0}>
+                      <FontAwesomeIcon icon={faMinus} />
+                    </button>
+                    <span className="ingredientQuantity">{ing.quantity}</span>
+                    <button className="ingredientButton" onClick={() => handleIngredientQuantity(ing.name, 1)} disabled={ing.quantity >= 2}>
+                      <FontAwesomeIcon icon={faPlus} />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button
+              className="ingredientAjouterPanier"
+              onClick={() => {
+                dispatch(ajouterPanier({ ...selectedPizza, ingredients: ingredients }));
+                navigate("/");
+              }}>
+              Ajouter au panier €{selectedPizza.price.toFixed(2).replace(".", ",")}
+            </button>
+          </div>
         </div>
-        <button
-          className="btnAddPanier"
-          onClick={() => {
-            dispatch(ajouterPanier({ ...selectedPizza, ingredients: ingredients }));
-            navigate("/");
-          }}>
-          Ajouter au panier €{selectedPizza.price.toFixed(2).replace(".", ",")}
-        </button>
-      </div>
-    </div>
-  ) : (
-    <p>Pizza non trouvée.</p>
+      ) : (
+        <p className="pizzaNonTrouvé">Pizza non trouvée.</p>
+      )}
+    </section>
   );
 }
