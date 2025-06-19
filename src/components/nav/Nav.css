@@ -1,18 +1,17 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-inline: 100px;
   padding-block: 12px;
-  align-items: center;
-  background-color: #c8102e; 
+  background-color: #c8102e;
   color: white;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1000;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .logo-img {
@@ -23,15 +22,19 @@
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
 
 .nav-links li {
   font-weight: bold;
+}
+
+.nav-links li.NOclk {
+  pointer-events: none;
+  opacity: 0.8;
 }
 
 .nav-links a {
@@ -43,4 +46,38 @@
 
 .nav-links a:hover {
   text-decoration: underline;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+ .se-connecter {
+  border-radius: 20px;
+  border: 1.5px dotted rgba(255, 255, 255, 0.811);
+  padding: 9px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.langue {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.chevron {
+  font-size: 0.7rem;
 }
