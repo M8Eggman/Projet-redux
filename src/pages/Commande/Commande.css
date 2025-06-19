@@ -1,9 +1,11 @@
 .sectionCommande {
   max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
+  margin-inline: auto;
+  margin-top: 90px;
+  box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
   color: #222;
+  min-height: calc(100dvh - 160px);
 }
 
 .sectionHeader {

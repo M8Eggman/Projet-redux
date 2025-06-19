@@ -72,7 +72,7 @@ export default function PizzaPanier({ changeStyle }) {
             <p className="panierVide">Panier vide</p>
           )}
         </div>
-        {!changeStyle && <input className="pizzaPanierCoupon" type="text" placeholder="Insérer votre coupon" />}
+        {!changeStyle && <p className="couponAccueil">Vous pouvez entrer votre coupon à l'étape suivante !</p>}
         <div className="pizzaPanierTotal">
           {totalAvecLivraison >= 15 && (
             <p>
@@ -88,7 +88,7 @@ export default function PizzaPanier({ changeStyle }) {
       </div>
       {!changeStyle && (
         <div className="pizzaPanierCommander">
-          <button>
+          <button onClick ={ ()=> navigate ('/validation') }>
             <span>{quantite}</span>
             <span>Commander</span>
             <span>€{totalAvecLivraison.toFixed(2).replace(".", ",")}</span>

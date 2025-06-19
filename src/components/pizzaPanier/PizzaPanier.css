@@ -185,3 +185,11 @@
   text-align: center;
   padding-bottom: 30px;
 }
+.couponAccueil{ 
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px dashed rgb(200, 200, 200);
+  color: grey;
+}

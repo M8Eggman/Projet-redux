@@ -1,4 +1,3 @@
-/* Footer.css */
 .footer {
   background-color: #231f20;
   color: white;
@@ -8,7 +7,5 @@
   font-family: "Ubuntu", sans-serif;
   width: 100%;
   box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  margin-top: 25px;
   height: 50px;
 }

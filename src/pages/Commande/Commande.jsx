@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./Commande.css";
+import Footer from "../../components/footer/Footer";
 
 export default function DetailsCommande() {
-  const cart = useSelector((state) => state.pizza.cart || []);
+  const cart = useSelector((state) => state.pizza.panier);
   const total = cart.reduce((acc, pizza) => acc + pizza.price, 0);
   const navigate = useNavigate();
 
   const handleValider = () => {
-    navigate("/merci-commande");
+    navigate("/remerciement");
   };
 
   return (
@@ -46,7 +47,7 @@ export default function DetailsCommande() {
                 </tr>
               </tfoot>
             </table>
-
+            <input className="pizzaPanierCoupon" type="text" placeholder="Insérer votre coupon" ></input>
             <button className="btnValider" onClick={handleValider}>
               Valider la commande
             </button>
