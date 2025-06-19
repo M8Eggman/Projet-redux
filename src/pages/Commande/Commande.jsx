@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./Commande.css";
-import Footer from "../../components/footer/Footer";
 
-export default function DetailsCommande() {
+export default function Commande() {
   const cart = useSelector((state) => state.pizza.panier);
   const total = cart.reduce((acc, pizza) => acc + pizza.price, 0);
   const navigate = useNavigate();

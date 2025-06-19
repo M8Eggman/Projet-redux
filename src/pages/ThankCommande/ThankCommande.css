@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 89vh;
+  min-height: calc(100vh - 70px);
   background-color: #f8fafc;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .merciBox {
