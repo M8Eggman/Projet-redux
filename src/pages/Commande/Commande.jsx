@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "./DetailsCommande.css";
+import "./Commande.css";
 
 export default function DetailsCommande() {
   const cart = useSelector((state) => state.pizza.cart || []);
@@ -8,8 +8,6 @@ export default function DetailsCommande() {
   const navigate = useNavigate();
 
   const handleValider = () => {
-    // Ici tu pourrais ajouter un dispatch pour vider le panier, envoyer la commande, etc.
-    // Pour l'exemple on redirige juste vers la page remerciement
     navigate("/merci-commande");
   };
 

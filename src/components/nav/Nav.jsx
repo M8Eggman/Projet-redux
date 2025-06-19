@@ -1,13 +1,14 @@
 import React from "react";
 import "./Nav.css";
 import logo from "../../assets/logo.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Nav() {
+  const navigate = useNavigate ()
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="#pizza">
+        <a onClick ={ ()=> navigate ('/') }>
           <img src={logo} alt="Logo PizzaHut" className="logo-img" />
         </a>
       </div>
