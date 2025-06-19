@@ -19,7 +19,7 @@ function quantiteTotale(panier) {
   return quantite;
 }
 
-export default function PizzaPanier() {
+export default function PizzaPanier({ changeStyle }) {
   const panier = useSelector((state) => state.pizza.panier);
   const livraison = 1.99;
   const quantite = quantiteTotale(panier);
@@ -30,29 +30,33 @@ export default function PizzaPanier() {
     <div className="pizzaPanier">
       <div className="pizzaPanierHeader">
         <h2>Panier d'achat</h2>
-        <div className="pizzaPanierAllPizzas">
+        <div className="pizzaPanierAllPizzas" style={changeStyle ? { maxHeight: "280px" } : {}}>
           {panier.length !== 0 ? (
             panier.map((pizza, index) => (
-              <div key={index} className="pizzaPanierPizza">
+              <div key={index} className="pizzaPanierPizza" style={changeStyle ? { alignItems: "flex-start", paddingTop: "15px", height: "70px" } : {}}>
                 <div className="pizzaPanierPizzadetails">
                   <p>{pizza.name}</p>
                   <p>Medium Classic</p>
-                  <div className="pizzaPanierQuantity">
-                    <button>
-                      <FontAwesomeIcon icon={faMinus} />
-                    </button>
-                    <span>{pizza.quantity}</span>
-                    <button>
-                      <FontAwesomeIcon icon={faPlus} />
-                    </button>
-                  </div>
+                  {!changeStyle && (
+                    <div className="pizzaPanierQuantity">
+                      <button>
+                        <FontAwesomeIcon icon={faMinus} />
+                      </button>
+                      <span>{pizza.quantity}</span>
+                      <button>
+                        <FontAwesomeIcon icon={faPlus} />
+                      </button>
+                    </div>
+                  )}
                 </div>
                 <div className="pizzaPanierPrice">
                   <p>€{pizza.price.toFixed(2).replace(".", ",")}</p>
-                  <div className="pizzaPanierBtn">
-                    <button className="pizzaPanierModifier">Modifier</button>
-                    <button className="pizzaPanierSupprimer">Supprimer</button>
-                  </div>
+                  {!changeStyle && (
+                    <div className="pizzaPanierBtn">
+                      <button className="pizzaPanierModifier">Modifier</button>
+                      <button className="pizzaPanierSupprimer">Supprimer</button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))
@@ -60,7 +64,7 @@ export default function PizzaPanier() {
             <p className="panierVide">Panier vide</p>
           )}
         </div>
-        <input className="pizzaPanierCoupon" type="text" placeholder="Insérer votre coupon" />
+        {!changeStyle && <input className="pizzaPanierCoupon" type="text" placeholder="Insérer votre coupon" />}
         <div className="pizzaPanierTotal">
           {totalAvecLivraison >= 15 && (
             <p>

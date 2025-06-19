@@ -1,4 +1,5 @@
 .pizzaPanier {
+  z-index: 1;
   min-width: 250px;
   position: sticky;
   top: 90px;
