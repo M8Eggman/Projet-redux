@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ThankCommande.css";
+import { useDispatch } from "react-redux";
+import { resetPanier } from "../../features/pizzaSlice";
+import { resetReduction } from "../../features/reductionSlice";
 
 export default function MerciCommande() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(resetPanier());
+    dispatch(resetReduction());
     const timer = setTimeout(() => {
-      navigate("/"); // Redirection après 5 secondes
+      navigate("/");
     }, 5000);
     return () => clearTimeout(timer);
   }, [navigate]);

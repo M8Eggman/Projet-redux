@@ -29,8 +29,11 @@ const pizzaSlice = createSlice({
         state.panier = state.panier.filter((pizza) => pizza.id !== action.payload.id);
       }
     },
+    resetPanier: (state) => {
+      state.panier = [];
+    },
   },
 });
 
-export const { ajouterPanier, supprimerPanier, changerQuantite, modifierPizzaPanier } = pizzaSlice.actions;
+export const { ajouterPanier, supprimerPanier, changerQuantite, modifierPizzaPanier, resetPanier } = pizzaSlice.actions;
 export const pizzaReducer = pizzaSlice.reducer;
