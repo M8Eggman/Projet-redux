@@ -101,6 +101,7 @@ export default function PizzaPanier({ changeStyle }) {
           )}
           <button
             disabled={totalAvecLivraison < 15}
+            onClick ={ ()=> navigate ('/validation')}
             style={{
               opacity: totalAvecLivraison < 15 ? "0.5" : "1",
               cursor: totalAvecLivraison < 15 ? "not-allowed" : "pointer",
