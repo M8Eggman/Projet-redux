@@ -37,7 +37,6 @@
   margin-top: 2rem;
 }
 
-/* =========== TABLETTE (max-width: 1024px) =========== */
 @media (max-width: 1024px) {
   .merciBox {
     padding: 2.5rem;
@@ -52,7 +51,6 @@
   }
 }
 
-/* =========== TÉLÉPHONE (max-width: 768px) =========== */
 @media (max-width: 768px) {
   .merciBox {
     padding: 2rem;
@@ -72,7 +70,6 @@
   }
 }
 
-/* =========== PETITS TÉLÉPHONES (max-width: 480px) =========== */
 @media (max-width: 480px) {
   .merciBox {
     padding: 1.5rem;

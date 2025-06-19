@@ -182,46 +182,20 @@
   font-size: 1.2rem;
   margin-top: 60px;
 }
-.ingredientResponsiveButton {
-  display: none;
-  align-items: center;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
-  color: white;
-}
-.ingredientResponsiveButton h1 {
-  position: relative;
-  left: 25px;
-  flex-grow: 1;
-  text-align: center;
-}
-.ingredientResponsiveButton button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  margin-right: 25px;
-  cursor: pointer;
-  z-index: 1;
-}
-.ingredientResponsiveButton button svg {
-  cursor: pointer;
-}
 
-@media (max-width: 992px) {
-  .sectionIngredients {
-    position: absolute;
-    padding: 0;
-    z-index: 10000;
-    background-color: #f5f7f9;
+/* ================= TABLETTE ================= */
+@media (max-width: 1024px) {
+  .ingredientImage {
     width: 100%;
-    max-width: initial;
-    display: flex;
+    max-height: 300px;
+  }
+
+  .ingredients {
+    height: auto;
+    max-height: none;
+  }
+
+  .modifPizza {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -236,13 +210,12 @@
     gap: 20px;
     font-size: 0.75rem;
   }
-  .ingredients > p span {
-    display: inline;
-    font-size: 0.9rem;
-    color: black;
-  }
-  .sectionIngredients > button {
-    display: none;
+}
+
+/* ================= TÉLÉPHONE ================= */
+@media (max-width: 768px) {
+  .sectionIngredients {
+    padding-inline: 12px;
   }
   .ingredientResponsiveButton {
     display: flex;
@@ -263,17 +236,24 @@
     box-sizing: border-box;
   }
 }
-@media (max-width: 375px) {
-  .ingredientButton {
-    width: 20px;
-    height: 20px;
-    font-size: 14px;
-    margin: 0 2px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
+
+/* ============ PETIT MOBILE ================= */
+@media (max-width: 480px) {
+  .ingredients > h1 {
+    font-size: 1.4rem;
+  }
+
+  .ingredients > p {
+    font-size: 0.9rem;
+  }
+
+  .ingredientName {
+    font-size: 0.9rem;
+  }
+
+  .ingredientAjouterPanier button {
+    font-size: 1rem;
+    padding: 10px 0;
   }
   .ingredients ul li {
     gap: 5px;
