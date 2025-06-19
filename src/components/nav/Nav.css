@@ -38,6 +38,7 @@
 }
 
 .nav-links a {
+  cursor: pointer;
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -62,7 +63,7 @@
   padding: 0;
 }
 
- .se-connecter {
+.se-connecter {
   border-radius: 20px;
   border: 1.5px dotted rgba(255, 255, 255, 0.811);
   padding: 9px 12px;

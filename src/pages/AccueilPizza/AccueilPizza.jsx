@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import PizzaCard from "../../components/pizzaCard/PizzaCard";
-import "./AccueilPizza.css"
+import "./AccueilPizza.css";
+import PizzaPanier from "../../components/pizzaPanier/pizzaPanier";
 
 export default function AccueilPizza() {
   const pizzas = useSelector((state) => state.pizza.allPizzas);
@@ -8,20 +9,19 @@ export default function AccueilPizza() {
   return (
     <>
       <section className="sectionAccueil">
-      <div>
-        <div className="sectionHeader">
-          <div className="line"></div>
-          <div className="title">Pizza</div>
-          <div className="line"></div>
+        <div>
+          <div className="sectionHeader">
+            <div className="line"></div>
+            <div className="title">Pizza</div>
+            <div className="line"></div>
+          </div>
+          <div className="accueilPizzas">
+            {pizzas.map((pizza, index) => (
+              <PizzaCard key={index} pizza={pizza} />
+            ))}
+          </div>
         </div>
-
-        <div className="accueilPizzas">
-          {pizzas.map((pizza, index) => (
-            <PizzaCard key={index} pizza={pizza} />
-          ))}
-        </div>
-        </div>
-        <div className="accueilPanier"></div>
+        <PizzaPanier />
       </section>
     </>
   );

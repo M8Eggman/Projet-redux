@@ -30,6 +30,72 @@ export default function PizzaPanier() {
               </div>
             </div>
           </div>
+          <div className="pizzaPanierPizza">
+            <div className="pizzaPanierPizzadetails">
+              <p>Garden Lovers</p>
+              <p>Medium Classic</p>
+              <div className="pizzaPanierQuantity">
+                <button>
+                  <FontAwesomeIcon icon={faMinus} />
+                </button>
+                <span>1</span>
+                <button>
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
+              </div>
+            </div>
+            <div className="pizzaPanierPrice">
+              <p>€16,00</p>
+              <div className="pizzaPanierBtn">
+                <button className="pizzaPanierModifier">Modifier</button>
+                <button className="pizzaPanierSupprimer">Supprimer</button>
+              </div>
+            </div>
+          </div>
+          <div className="pizzaPanierPizza">
+            <div className="pizzaPanierPizzadetails">
+              <p>Garden Lovers</p>
+              <p>Medium Classic</p>
+              <div className="pizzaPanierQuantity">
+                <button>
+                  <FontAwesomeIcon icon={faMinus} />
+                </button>
+                <span>1</span>
+                <button>
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
+              </div>
+            </div>
+            <div className="pizzaPanierPrice">
+              <p>€16,00</p>
+              <div className="pizzaPanierBtn">
+                <button className="pizzaPanierModifier">Modifier</button>
+                <button className="pizzaPanierSupprimer">Supprimer</button>
+              </div>
+            </div>
+          </div>
+          <div className="pizzaPanierPizza">
+            <div className="pizzaPanierPizzadetails">
+              <p>Garden Lovers</p>
+              <p>Medium Classic</p>
+              <div className="pizzaPanierQuantity">
+                <button>
+                  <FontAwesomeIcon icon={faMinus} />
+                </button>
+                <span>1</span>
+                <button>
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
+              </div>
+            </div>
+            <div className="pizzaPanierPrice">
+              <p>€16,00</p>
+              <div className="pizzaPanierBtn">
+                <button className="pizzaPanierModifier">Modifier</button>
+                <button className="pizzaPanierSupprimer">Supprimer</button>
+              </div>
+            </div>
+          </div>
         </div>
         <input className="pizzaPanierCoupon" type="text" placeholder="Insérer votre coupon" />
         <div className="pizzaPanierTotal">
