@@ -1,7 +1,9 @@
 import "./pizzaPanier.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { supprimerPanier } from "../../features/pizzaSlice";
 
 function totalPanier(panier) {
   let total = 0;
@@ -20,6 +22,8 @@ function quantiteTotale(panier) {
 }
 
 export default function PizzaPanier({ changeStyle }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const panier = useSelector((state) => state.pizza.panier);
   const livraison = 1.99;
   const quantite = quantiteTotale(panier);
@@ -54,7 +58,9 @@ export default function PizzaPanier({ changeStyle }) {
                   {!changeStyle && (
                     <div className="pizzaPanierBtn">
                       <button className="pizzaPanierModifier">Modifier</button>
-                      <button className="pizzaPanierSupprimer">Supprimer</button>
+                      <button className="pizzaPanierSupprimer" onClick={() => dispatch(supprimerPanier(pizza.id))}>
+                        Supprimer
+                      </button>
                     </div>
                   )}
                 </div>
@@ -78,13 +84,15 @@ export default function PizzaPanier({ changeStyle }) {
           </p>
         </div>
       </div>
-      <div className="pizzaPanierCommander">
-        <button>
-          <span>{quantite}</span>
-          <span>Commander</span>
-          <span>€{totalAvecLivraison.toFixed(2).replace(".", ",")}</span>
-        </button>
-      </div>
+      {!changeStyle && (
+        <div className="pizzaPanierCommander">
+          <button>
+            <span>{quantite}</span>
+            <span>Commander</span>
+            <span>€{totalAvecLivraison.toFixed(2).replace(".", ",")}</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

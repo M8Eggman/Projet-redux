@@ -13,8 +13,11 @@ const pizzaSlice = createSlice({
     ajouterPanier: (state, action) => {
       state.panier.push({ ...action.payload, id: Date.now(), quantity: 1 });
     },
+    supprimerPanier: (state, action) => {
+      state.panier = state.panier.filter((pizza) => pizza.id !== action.payload);
+    },
   },
 });
 
-export const { ajouterPanier } = pizzaSlice.actions;
+export const { ajouterPanier, supprimerPanier } = pizzaSlice.actions;
 export const pizzaReducer = pizzaSlice.reducer;
