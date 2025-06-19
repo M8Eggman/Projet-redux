@@ -1,6 +1,6 @@
 import "./pizzaPanier.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faMotorcycle, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { changerQuantite, supprimerPanier } from "../../features/pizzaSlice";
@@ -88,7 +88,23 @@ export default function PizzaPanier({ changeStyle }) {
       </div>
       {!changeStyle && (
         <div className="pizzaPanierCommander">
-          <button onClick ={ ()=> navigate ('/validation') }>
+          {totalAvecLivraison < 15 && (
+            <div className="pizzaPanierMessage">
+              <span className="icon">
+                <FontAwesomeIcon icon={faMotorcycle} />
+              </span>
+              <div className="messageContent">
+                <span className="messageTitle">Commander</span>
+                <span className="messageDescription">Livraison à partir d'un montant minimum de commande de 15.00€.</span>
+              </div>
+            </div>
+          )}
+          <button
+            disabled={totalAvecLivraison < 15}
+            style={{
+              opacity: totalAvecLivraison < 15 ? "0.5" : "1",
+              cursor: totalAvecLivraison < 15 ? "not-allowed" : "pointer",
+            }}>
             <span>{quantite}</span>
             <span>Commander</span>
             <span>€{totalAvecLivraison.toFixed(2).replace(".", ",")}</span>
