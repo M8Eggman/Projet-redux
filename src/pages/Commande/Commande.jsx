@@ -1,14 +1,25 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { appliquerCode } from "../../features/reductionSlice";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./Commande.css";
 
 export default function Commande() {
   const cart = useSelector((state) => state.pizza.panier);
-  const total = cart.reduce((acc, pizza) => acc + pizza.price, 0);
+  const { reduction } = useSelector((state) => state.reduction); // 👈
+  const [coupon, setCoupon] = useState("");
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const total = cart.reduce((acc, pizza) => acc + pizza.price, 0);
+  const totalApresReduction = total * ((100 - reduction) / 100);
 
   const handleValider = () => {
     navigate("/remerciement");
+  };
+
+  const handleCoupon = () => {
+    dispatch(appliquerCode(coupon));
   };
 
   return (
@@ -44,16 +55,26 @@ export default function Commande() {
                   <td>Total</td>
                   <td>{total.toFixed(2)} €</td>
                 </tr>
+                {reduction > 0 && (
+                  <tr>
+                    <td>Total avec réduction</td>
+                    <td>{totalApresReduction.toFixed(2)} €</td>
+                  </tr>
+                )}
               </tfoot>
             </table>
 
-            {/* Champ coupon + bouton en colonne */}
             <div className="commandeCouponZone">
               <input
                 className="pizzaPanierCoupon"
                 type="text"
-                placeholder="Insérer votre coupon"
+                value={coupon}
+                onChange={(e) => setCoupon(e.target.value)}
+                placeholder="Code promo (ex: PIZZA10)"
               />
+              <button className="btnValider" onClick={handleCoupon}>
+                Appliquer le code
+              </button>
               <button className="btnValider" onClick={handleValider}>
                 Valider la commande
               </button>

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   code: "",
-  reduction: 0, // en pourcentage
+  reduction: 0, // Pourcentage de réduction
 };
 
 const reductionSlice = createSlice({
@@ -10,16 +10,21 @@ const reductionSlice = createSlice({
   initialState,
   reducers: {
     appliquerCode: (state, action) => {
-      const codeSaisi = action.payload.toLowerCase();
-      if (codeSaisi === "pizza10") {
-        state.code = "PIZZA10";
-        state.reduction = 10;
-      } else if (codeSaisi === "pizza20") {
-        state.code = "PIZZA20";
-        state.reduction = 20;
-      } else {
-        state.code = "";
-        state.reduction = 0;
+      const code = action.payload.toLowerCase();
+
+      switch (code) {
+        case "pizza10":
+          state.code = "PIZZA10";
+          state.reduction = 10;
+          break;
+        case "pizza20":
+          state.code = "PIZZA20";
+          state.reduction = 20;
+          break;
+        default:
+          state.code = "";
+          state.reduction = 0;
+          break;
       }
     },
     resetReduction: (state) => {
@@ -30,4 +35,4 @@ const reductionSlice = createSlice({
 });
 
 export const { appliquerCode, resetReduction } = reductionSlice.actions;
-export default reductionSlice.reducer;
+export const reductionReducer = reductionSlice.reducer; 
