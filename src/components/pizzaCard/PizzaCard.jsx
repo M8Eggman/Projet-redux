@@ -7,7 +7,7 @@ export default function PizzaCard({ pizza }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
-    <div className="pizzaCard" onClick={() => navigate(`/${pizza.name}`)}>
+    <div className="pizzaCard" onClick={() => navigate(`/${pizza.id}`)}>
       <div className="pizzaCardImg">
         <img src={pizza.image} alt={pizza.name} />
       </div>

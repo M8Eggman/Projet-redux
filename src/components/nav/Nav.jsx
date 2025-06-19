@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import logo from "../../assets/logo.webp";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
@@ -15,7 +16,7 @@ export default function Nav() {
         <li className="NOclk">Menu</li>
         <li className="NOclk">Entrée</li>
         <li>
-          <a>Pizza</a>
+          <Link to="/">Pizza</Link>
         </li>
         <li className="NOclk">Spécialités</li>
         <li className="NOclk">Boissons</li>

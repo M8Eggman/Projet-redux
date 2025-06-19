@@ -8,16 +8,17 @@ import { ajouterPanier } from "../../features/pizzaSlice";
 import PizzaPanier from "../../components/pizzaPanier/pizzaPanier";
 
 export default function Ingredients() {
-  const { custom } = useParams();
+  const { id } = useParams();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const pizzas = useSelector((state) => state.pizza.allPizzas);
-  const selectedPizza = pizzas.find((pizza) => pizza.name === custom);
+  const panier = useSelector((state) => state.pizza.panier);
+  const selectedPizza = pizzas.find((pizza) => pizza.id === parseInt(id)) || panier.find((pizza) => pizza.id === parseInt(id));
 
-  // Ajoute quantity a tout les ingredients
-  const [ingredients, setIngredients] = useState(selectedPizza.ingredients.map((i) => ({ ...i, quantity: 1 })));
+  // Ajoute quantity a tout les ingredients, seulement si selectedPizza existe
+  const [ingredients, setIngredients] = useState(selectedPizza && selectedPizza.ingredients ? selectedPizza.ingredients.map((i) => ({ ...i, quantity: 1 })) : []);
 
   function handleIngredientQuantity(name, nbr) {
     setIngredients((prev) => prev.map((i) => (i.name === name ? { ...i, quantity: i.quantity + nbr } : i)));

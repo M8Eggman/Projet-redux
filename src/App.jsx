@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<AccueilPizza />} />
-          <Route path="/:custom" element={<Ingredients />} />
+          <Route path="/:id" element={<Ingredients />} />
           <Route path="/validation" />
           <Route path="/remerciement" />
         </Route>
