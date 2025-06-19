@@ -1,0 +1,151 @@
+.pizzaPanier {
+  border-radius: 5px;
+  width: 340px;
+}
+.pizzaPanierHeader {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.pizzaPanierHeader > h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 10px;
+}
+.pizzaPanierPizza {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-block: 1px dashed gray;
+  padding: 10px 5px;
+}
+.pizzaPanierPizzadetails > p:first-of-type {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 2px;
+}
+.pizzaPanierPizzadetails > p:last-of-type {
+  color: grey;
+  font-size: 0.9rem;
+  margin: 0;
+  margin-bottom: 8px;
+}
+.pizzaPanierQuantity {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.pizzaPanierQuantity > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dfdfe3;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pizzaPanierQuantity > button svg {
+  color: white;
+  font-size: 15px;
+}
+.pizzaPanierQuantity > span {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-inline: 10px;
+}
+.pizzaPanierPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 25px;
+}
+.pizzaPanierPrice > p {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+}
+.pizzaPanierModifier {
+  display: inline;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 4px;
+}
+.pizzaPanierSupprimer {
+  display: inline;
+  background: none;
+  border: none;
+  color: #c8102e;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+}
+.pizzaPanierCoupon {
+  border: 2px dashed gray;
+  border-radius: 8px;
+  background-color: white;
+  padding: 16px 10px;
+  text-align: center;
+  color: black;
+  font-size: 1.01rem;
+  margin: 10px;
+  box-sizing: border-box;
+}
+.pizzaPanierTotal {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  background: #fafbfc;
+  border-radius: 8px;
+  padding: 10px;
+}
+.pizzaPanierTotal > p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+.pizzaPanierTotal > p:first-of-type span {
+  color: #b5b6bd;
+  font-size: 1.1rem;
+}
+.pizzaPanierTotal > p:last-of-type span {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.pizzaPanierCommander {
+  margin-top: 20px;
+}
+.pizzaPanierCommander > button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #70a401;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+.pizzaPanierCommander > button span:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: #639003;
+}
+.pizzaPanierCommander > button:hover {
+  background-color: #4c6f01;
+}
