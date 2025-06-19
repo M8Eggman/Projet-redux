@@ -14,7 +14,9 @@ export default function Nav() {
       <ul className="nav-links">
         <li className="NOclk">Menu</li>
         <li className="NOclk">Entrée</li>
-        <li><a href="#pizza">Pizza</a></li>
+        <li>
+          <a>Pizza</a>
+        </li>
         <li className="NOclk">Spécialités</li>
         <li className="NOclk">Boissons</li>
         <li className="NOclk">Desserts</li>

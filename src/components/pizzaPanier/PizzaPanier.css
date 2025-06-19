@@ -1,4 +1,7 @@
 .pizzaPanier {
+  min-width: 250px;
+  position: sticky;
+  top: 90px;
   border-radius: 5px;
   width: 340px;
 }
@@ -12,13 +15,21 @@
   font-size: 1.4rem;
   font-weight: 900;
   margin: 10px;
+  letter-spacing: -1px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.pizzaPanierAllPizzas {
+  max-height: 240px;
+  overflow-y: auto;
 }
 .pizzaPanierPizza {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   border-block: 1px dashed gray;
-  padding: 10px 5px;
+  padding-inline: 10px;
+  height: 80px;
+  box-sizing: border-box;
 }
 .pizzaPanierPizzadetails > p:first-of-type {
   font-weight: bold;
@@ -125,7 +136,7 @@
 }
 .pizzaPanierCommander > button {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   color: white;
   background-color: #70a401;
@@ -143,8 +154,9 @@
   justify-content: center;
   align-items: center;
   width: 25px;
-  height: 25px;
+  height: 30px;
   background-color: #639003;
+  border-radius: 5px;
 }
 .pizzaPanierCommander > button:hover {
   background-color: #4c6f01;
