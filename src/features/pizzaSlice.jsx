@@ -9,8 +9,12 @@ const initialState = {
 const pizzaSlice = createSlice({
   name: "pizza",
   initialState,
-  reducers: {},
+  reducers: {
+    ajouterPanier: (state, action) => {
+      state.panier.push({ ...action.payload, id: Date.now(), quantity: 1 });
+    },
+  },
 });
 
-export const {} = pizzaSlice.actions;
+export const { ajouterPanier } = pizzaSlice.actions;
 export const pizzaReducer = pizzaSlice.reducer;

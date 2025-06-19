@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux";
 import "./PizzaCard.css";
+import { ajouterPanier } from "../../features/pizzaSlice";
 
 export default function PizzaCard({ pizza }) {
+  const dispatch = useDispatch();
   return (
     <div className="pizzaCard">
       <div className="pizzaCardImg">
@@ -14,7 +17,7 @@ export default function PizzaCard({ pizza }) {
         <span>
           à partir de <b>€{pizza.price.toFixed(2).replace(".", ",")}</b>
         </span>
-        <button>+</button>
+        <button onClick={()=>dispatch(ajouterPanier(pizza))}>+</button>
       </div>
     </div>
   );
