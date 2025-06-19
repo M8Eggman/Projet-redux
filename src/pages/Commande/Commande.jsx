@@ -46,10 +46,18 @@ export default function Commande() {
                 </tr>
               </tfoot>
             </table>
-            <input className="pizzaPanierCoupon" type="text" placeholder="Insérer votre coupon" ></input>
-            <button className="btnValider" onClick={handleValider}>
-              Valider la commande
-            </button>
+
+            {/* Champ coupon + bouton en colonne */}
+            <div className="commandeCouponZone">
+              <input
+                className="pizzaPanierCoupon"
+                type="text"
+                placeholder="Insérer votre coupon"
+              />
+              <button className="btnValider" onClick={handleValider}>
+                Valider la commande
+              </button>
+            </div>
           </>
         )}
       </div>

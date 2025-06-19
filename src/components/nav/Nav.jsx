@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import logo from "../../assets/logo.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Nav() {
-  const navigate = useNavigate ()
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar">
-      <div className="logo">
-        <a onClick ={ ()=> navigate ('/') }>
-          <img src={logo} alt="Logo PizzaHut" className="logo-img" />
-        </a>
+      <div className="logo" onClick={() => navigate("/")}>
+        <img src={logo} alt="Logo PizzaHut" className="logo-img" />
       </div>
 
-      <ul className="nav-links">
+      {/* Bouton burger */}
+      <div
+        className={`burger ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span />
+        <span />
+        <span />
+      </div>
+
+      {/* Liens navigation */}
+      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
         <li className="NOclk">Menu</li>
         <li className="NOclk">Entrée</li>
         <li>
@@ -24,7 +35,7 @@ export default function Nav() {
         <li className="NOclk">Desserts</li>
       </ul>
 
-      <div className="right-section">
+      <div className={`right-section ${menuOpen ? "active" : ""}`}>
         <ul className="right-links">
           <li className="se-connecter">Se connecter</li>
           <li className="langue">

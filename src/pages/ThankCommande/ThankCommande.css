@@ -5,6 +5,8 @@
   min-height: calc(100vh - 70px);
   background-color: #f8fafc;
   font-family: "Ubuntu", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .merciBox {
@@ -33,4 +35,58 @@
   font-size: 0.9rem;
   color: #888;
   margin-top: 2rem;
+}
+
+/* =========== TABLETTE (max-width: 1024px) =========== */
+@media (max-width: 1024px) {
+  .merciBox {
+    padding: 2.5rem;
+  }
+
+  .merciBox h1 {
+    font-size: 1.8rem;
+  }
+
+  .merciBox p {
+    font-size: 1rem;
+  }
+}
+
+/* =========== TÉLÉPHONE (max-width: 768px) =========== */
+@media (max-width: 768px) {
+  .merciBox {
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  .merciBox h1 {
+    font-size: 1.6rem;
+  }
+
+  .merciBox p {
+    font-size: 0.95rem;
+  }
+
+  .redirect {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========== PETITS TÉLÉPHONES (max-width: 480px) =========== */
+@media (max-width: 480px) {
+  .merciBox {
+    padding: 1.5rem;
+  }
+
+  .merciBox h1 {
+    font-size: 1.4rem;
+  }
+
+  .merciBox p {
+    font-size: 0.9rem;
+  }
+
+  .redirect {
+    font-size: 0.8rem;
+  }
 }
