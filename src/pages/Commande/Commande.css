@@ -65,3 +65,19 @@
   color: #666;
   margin-top: 3rem;
 }
+.btnValider {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background-color: hsl(240, 67%, 55%); /* un bleu sympa */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnValider:hover {
+  background-color: hsl(240, 67%, 45%);
+}
