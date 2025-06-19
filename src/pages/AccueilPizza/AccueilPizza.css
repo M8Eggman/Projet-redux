@@ -1,4 +1,50 @@
 .sectionAccueil {
-    padding-top: 100px;
-    width: 100%
+  display: flex;
+  justify-content: space-between; /* espace entre pizzas et panier */
+  align-items: flex-start;
+  padding: 100px 50px 50px;
+  flex-wrap: nowrap;
+  padding-right: 90px;
+  margin-left: 20px;
+}
+
+.accueilPizzas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  flex: 1 1 auto;
+}
+
+.accueilPanier {
+  width: 230px;
+  min-width: 230px; /* fixe la largeur pour pas réduire */
+  background-color: #f8f9fb;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  margin-left: 30px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; 
+  margin-bottom: 40px; 
+}
+
+.sectionHeader .line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #DFDFE3; 
+}
+
+.sectionHeader .title {
+  font-weight: 100;
+  font-size: 1rem;
+  color: #747474;
+  white-space: nowrap; 
 }
