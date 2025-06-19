@@ -1,6 +1,6 @@
+import "./AccueilPizza.css";
 import { useSelector } from "react-redux";
 import PizzaCard from "../../components/pizzaCard/PizzaCard";
-import "./AccueilPizza.css";
 import PizzaPanier from "../../components/pizzaPanier/pizzaPanier";
 
 export default function AccueilPizza() {
