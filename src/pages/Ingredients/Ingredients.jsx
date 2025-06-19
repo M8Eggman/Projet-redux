@@ -4,7 +4,7 @@ import { faMinus, faPlus, faChevronDown, faChevronLeft, faChevronUp } from "@for
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { ajouterPanier } from "../../features/pizzaSlice";
+import { ajouterPanier, modifierPizzaPanier } from "../../features/pizzaSlice";
 import PizzaPanier from "../../components/pizzaPanier/pizzaPanier";
 
 export default function Ingredients() {
@@ -15,15 +15,18 @@ export default function Ingredients() {
 
   const pizzas = useSelector((state) => state.pizza.allPizzas);
   const panier = useSelector((state) => state.pizza.panier);
-  const selectedPizza = pizzas.find((pizza) => pizza.id === parseInt(id)) || panier.find((pizza) => pizza.id === parseInt(id));
+  const selectedPizza = pizzas.find((pizza) => pizza.id === id) || panier.find((pizza) => pizza.id === parseInt(id));
 
+  // si l'id est un int choisis le mode modifier sinon le mode ajouter
+  const mode = parseInt(id) ? "modifier" : "ajouter";
   // Ajoute quantity a tout les ingredients, seulement si selectedPizza existe
-  const [ingredients, setIngredients] = useState(selectedPizza && selectedPizza.ingredients ? selectedPizza.ingredients.map((i) => ({ ...i, quantity: 1 })) : []);
+  const [ingredients, setIngredients] = useState(
+    selectedPizza && selectedPizza.ingredients ? selectedPizza.ingredients.map((i) => ({ ...i, quantity: i.quantity + 1 ? i.quantity : 1 })) : []
+  );
 
   function handleIngredientQuantity(name, nbr) {
     setIngredients((prev) => prev.map((i) => (i.name === name ? { ...i, quantity: i.quantity + nbr } : i)));
   }
-
   return (
     <section className="sectionIngredients">
       <button onClick={() => navigate("/")}>
@@ -47,7 +50,7 @@ export default function Ingredients() {
                 <ul>
                   {ingredients.map((ing) => (
                     <li key={ing.name}>
-                      <span className="ingredientIcon">{/* ajout une icone si jai pas la flemme */}</span>
+                      <span className="ingredientIcon">{/* ajout d'une icone si jai pas la flemme */}</span>
                       <span className="ingredientName">{ing.name}</span>
                       <button className="ingredientButton" onClick={() => handleIngredientQuantity(ing.name, -1)} disabled={ing.quantity <= 0}>
                         <FontAwesomeIcon icon={faMinus} />
@@ -63,7 +66,11 @@ export default function Ingredients() {
               <div className="ingredientAjouterPanier">
                 <button
                   onClick={() => {
-                    dispatch(ajouterPanier({ ...selectedPizza, ingredients: ingredients }));
+                    if (mode === "ajouter") {
+                      dispatch(ajouterPanier({ ...selectedPizza, ingredients: ingredients }));
+                    } else {
+                      dispatch(modifierPizzaPanier({ ...selectedPizza, ingredients: ingredients }));
+                    }
                     navigate("/");
                   }}>
                   Ajouter au panier €{selectedPizza.price.toFixed(2).replace(".", ",")}
