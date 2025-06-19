@@ -214,7 +214,6 @@
   margin-top: 60px;
 }
 
-/* ================= TABLETTE ================= */
 @media (max-width: 1024px) {
   .ingredientImage {
     width: 100%;
@@ -239,7 +238,6 @@
   }
 }
 
-/* ================= TÉLÉPHONE ================= */
 @media (max-width: 768px) {
   .sectionIngredients {
     padding-inline: 12px;
@@ -271,7 +269,6 @@
   }
 }
 
-/* ============ PETIT MOBILE ================= */
 @media (max-width: 480px) {
   .ingredients > h1 {
     font-size: 1.4rem;

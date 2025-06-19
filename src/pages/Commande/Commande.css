@@ -74,8 +74,9 @@
 }
 
 .btnValider {
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 20px;
   background-color: hsl(240, 67%, 55%);
   color: white;
   border: none;
@@ -96,32 +97,29 @@
   margin-top: 2rem;
   width: 100%;
   max-width: 400px;
-  margin-inline: auto; /* centré */
+  margin-inline: auto; 
 }
 
-/* ============= TABLETTE ============== */
-/* ========== TABLETTE ========== */
 @media (max-width: 1024px) {
   .pizzaPanierCoupon {
     width: 100%;
     font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    margin: 0; /* 👈 Enlève le décalage */
+    margin: 0; 
   }
 
   .btnValider {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.5rem;
     font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
-/* ========== TÉLÉPHONE ========== */
 @media (max-width: 768px) {
   .pizzaPanierCoupon {
     font-size: 0.95rem;
     padding: 0.6rem 1.2rem;
-    margin: 0; /* 👈 Enlève le décalage */
+    margin: 0; 
   }
 
   .btnValider {
@@ -135,7 +133,6 @@
   }
 }
 
-/* ============= TRÈS PETITS ÉCRANS < 480px ============== */
 @media (max-width: 480px) {
   .sectionCommande {
     padding-inline: 12px;

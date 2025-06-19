@@ -11,8 +11,11 @@ export default function Commande() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+
   const total = cart.reduce((acc, pizza) => acc + pizza.price, 0);
+  const montantReduction = total * (reduction / 100);
   const totalApresReduction = total * ((100 - reduction) / 100);
+
 
   const handleValider = () => {
     navigate("/remerciement");
@@ -51,17 +54,24 @@ export default function Commande() {
                 ))}
               </tbody>
               <tfoot>
+            <tr>
+              <td>Total</td>
+              <td>{total.toFixed(2)} €</td>
+            </tr>
+            {reduction > 0 && (
+              <>
                 <tr>
-                  <td>Total</td>
-                  <td>{total.toFixed(2)} €</td>
+                  <td>Réduction</td>
+                  <td>-{montantReduction.toFixed(2)} €</td>
                 </tr>
-                {reduction > 0 && (
-                  <tr>
-                    <td>Total avec réduction</td>
-                    <td>{totalApresReduction.toFixed(2)} €</td>
-                  </tr>
-                )}
-              </tfoot>
+                <tr>
+                  <td>Total avec réduction</td>
+                  <td>{totalApresReduction.toFixed(2)} €</td>
+                </tr>
+              </>
+            )}
+          </tfoot>
+
             </table>
 
             <div className="commandeCouponZone">
@@ -70,7 +80,7 @@ export default function Commande() {
                 type="text"
                 value={coupon}
                 onChange={(e) => setCoupon(e.target.value)}
-                placeholder="Code promo (ex: PIZZA10)"
+                placeholder="Code promo"
               />
               <button className="btnValider" onClick={handleCoupon}>
                 Appliquer le code
