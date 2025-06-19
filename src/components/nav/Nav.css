@@ -18,6 +18,7 @@
 .logo-img {
   height: 35px;
   width: auto;
+  cursor: pointer;
 }
 
 .nav-links {

@@ -1,8 +1,8 @@
 .sectionIngredients {
   padding-top: 90px;
   box-sizing: border-box;
-  max-width: 1200px;
-  min-height: calc(100dvh - 95px);
+  max-width: 90vw;
+  min-height: calc(100dvh - 70px);
 }
 .sectionIngredients > button {
   background: none;
@@ -68,6 +68,9 @@
   font-size: 1rem;
   margin-block: 10px;
 }
+.ingredients > p span {
+  display: none;
+}
 .ingredients > div {
   background: white;
   border-radius: 10px;
@@ -116,12 +119,12 @@
 }
 .ingredientButton {
   background-color: #70a401;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 50%;
   width: 28px;
   height: 28px;
-  font-size: 1.1rem;
+  font-size: 18px;
   margin: 0 2px;
   cursor: pointer;
   display: flex;
@@ -129,16 +132,17 @@
   justify-content: center;
   transition: background 0.2s;
 }
+.ingredientButton:first-of-type {
+  background-color: #b5b6bd;
+}
 .ingredientButton:hover {
   background-color: #4c6f01;
 }
-
 .ingredientButton:disabled {
   background: #e5e5e5;
   color: #bbb;
   cursor: not-allowed;
 }
-
 .ingredientQuantity {
   min-width: 18px;
   text-align: center;
@@ -146,7 +150,6 @@
   font-size: 1.08rem;
   color: #444;
 }
-
 .ingredientAjouterPanier {
   position: sticky;
   bottom: -20px;
@@ -170,14 +173,109 @@
   transition: background-color 0.2s;
   box-shadow: 0 2px 8px #0001;
 }
-
 .ingredientAjouterPanier button:hover {
   background-color: #4c6f01;
 }
-
 .pizzaNonTrouvé {
   color: #e74c3c;
   text-align: center;
   font-size: 1.2rem;
   margin-top: 60px;
+}
+.ingredientResponsiveButton {
+  display: none;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.ingredientResponsiveButton h1 {
+  position: relative;
+  left: 25px;
+  flex-grow: 1;
+  text-align: center;
+}
+.ingredientResponsiveButton button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-right: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+.ingredientResponsiveButton button svg {
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .sectionIngredients {
+    position: absolute;
+    padding: 0;
+    z-index: 10000;
+    background-color: #f5f7f9;
+    width: 100%;
+    max-width: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .ingredients > h1 {
+    display: none;
+  }
+  .ingredients > p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.75rem;
+  }
+  .ingredients > p span {
+    display: inline;
+    font-size: 0.9rem;
+    color: black;
+  }
+  .sectionIngredients > button {
+    display: none;
+  }
+  .ingredientResponsiveButton {
+    display: flex;
+    position: fixed;
+  }
+  .modifPizza {
+    flex-direction: column;
+    width: 100vw;
+    border-radius: 0;
+  }
+  .ingredientImage {
+    width: 100%;
+    height: 250px;
+    object-position: center;
+  }
+  .ingredients {
+    min-width: 100vw;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 375px) {
+  .ingredientButton {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    margin: 0 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .ingredients ul li {
+    gap: 5px;
+  }
 }

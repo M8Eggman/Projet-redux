@@ -1,6 +1,6 @@
 import "./Ingredients.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus, faChevronDown, faChevronLeft, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus, faChevronDown, faChevronLeft, faChevronUp, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
@@ -27,11 +27,18 @@ export default function Ingredients() {
   function handleIngredientQuantity(name, nbr) {
     setIngredients((prev) => prev.map((i) => (i.name === name ? { ...i, quantity: i.quantity + nbr } : i)));
   }
+
   return (
     <section className="sectionIngredients">
       <button onClick={() => navigate("/")}>
         <FontAwesomeIcon icon={faChevronLeft} /> Retour
       </button>
+      <div className="ingredientResponsiveButton">
+        <h1>{selectedPizza.name}</h1>
+        <button onClick={() => navigate("/")}>
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
+      </div>
       {selectedPizza ? (
         <div className="divIngredients">
           <div className="modifPizza">
@@ -42,7 +49,9 @@ export default function Ingredients() {
               <h1>
                 {selectedPizza.name} <span>€{selectedPizza.price.toFixed(2).replace(".", ",")}</span>
               </h1>
-              <p>{selectedPizza.description}</p>
+              <p>
+                {selectedPizza.description} <span>€{selectedPizza.price.toFixed(2).replace(".", ",")}</span>
+              </p>
               <div className="">
                 <div className="ingredientsListHeader">
                   <h3>Ingrédients</h3> <FontAwesomeIcon icon={faChevronUp} />

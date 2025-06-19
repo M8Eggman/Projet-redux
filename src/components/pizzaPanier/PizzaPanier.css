@@ -185,7 +185,7 @@
   text-align: center;
   padding-bottom: 30px;
 }
-.couponAccueil{ 
+.couponAccueil {
   text-align: center;
   font-size: 15px;
   padding: 5px;
@@ -194,7 +194,7 @@
   color: grey;
 }
 .pizzaPanierMessage {
-    background-color: white;
+  background-color: white;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -222,4 +222,9 @@
   margin-top: 2px;
   font-size: 1rem;
   line-height: 1.5;
+}
+@media (max-width: 992px) {
+  .pizzaPanier {
+    display: none;
+  }
 }
