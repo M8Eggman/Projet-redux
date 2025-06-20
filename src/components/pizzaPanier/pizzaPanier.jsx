@@ -4,7 +4,7 @@ import { faMinus, faMotorcycle, faPlus, faXmark } from "@fortawesome/free-solid-
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { changerQuantite, supprimerPanier } from "../../features/pizzaSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function totalPanier(panier) {
   let total = 0;
@@ -30,7 +30,12 @@ export default function PizzaPanier({ changeStyle }) {
   const quantite = quantiteTotale(panier);
   const total = totalPanier(panier);
   const totalAvecLivraison = total + (panier.length > 0 ? livraison : 0);
-  const [afficherPanier, setAffichePanier] = useState(false);
+  const [afficherPanier, setAffichePanier] = useState(window.innerWidth >= 992);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setAffichePanier(window.innerWidth >= 992));
+    return () => window.removeEventListener("resize", () => setAffichePanier(window.innerWidth >= 992));
+  }, []);
 
   return (
     <>
