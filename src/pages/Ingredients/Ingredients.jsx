@@ -1,10 +1,10 @@
 import "./Ingredients.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus, faChevronDown, faChevronLeft, faChevronUp, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus, faChevronLeft, faChevronUp, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { ajouterPanier, ajoutIngredient, modifierPizzaPanier } from "../../features/pizzaSlice";
+import { ajouterPanier, modifierPizzaPanier } from "../../features/pizzaSlice";
 import PizzaPanier from "../../components/pizzaPanier/pizzaPanier";
 
 export default function Ingredients() {
@@ -25,6 +25,8 @@ export default function Ingredients() {
 
   const ingredientsSup = ingredients.filter((i) => i.quantity > 1);
   const ingredientsSans = ingredients.filter((i) => i.quantity === 0);
+
+  const totalPrice = selectedPizza.price + ingredients.filter((ing) => ing.quantity > 1).reduce((sum, ing) => sum + ing.price, 0);
 
   // si l'id est un int choisis le mode modifier sinon le mode ajouter
   const mode = parseInt(id) ? "modifier" : "ajouter";
@@ -110,13 +112,14 @@ export default function Ingredients() {
                     const pizzaAJour = {
                       ...selectedPizza,
                       ingredients: ingredients,
+                      totalPrice,
                       ingredientsSup,
                       ingredientsSans,
                     };
                     mode === "ajouter" ? dispatch(ajouterPanier(pizzaAJour)) : dispatch(modifierPizzaPanier(pizzaAJour));
                     navigate("/");
                   }}>
-                  Ajouter au panier €{selectedPizza.price.toFixed(2).replace(".", ",")}
+                  Ajouter au panier €{totalPrice.toFixed(2).replace(".", ",")}
                 </button>
               </div>
             </div>

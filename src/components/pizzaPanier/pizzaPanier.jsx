@@ -8,7 +8,7 @@ import { changerQuantite, supprimerPanier } from "../../features/pizzaSlice";
 function totalPanier(panier) {
   let total = 0;
   for (let i = 0; i < panier.length; i++) {
-    total += panier[i].price * panier[i].quantity;
+    total += panier[i].totalPrice * panier[i].quantity;
   }
   return total;
 }
@@ -75,7 +75,7 @@ export default function PizzaPanier({ changeStyle }) {
                   )}
                 </div>
                 <div className="pizzaPanierPrice">
-                  <p>€{pizza.price.toFixed(2).replace(".", ",")}</p>
+                  <p>€{pizza.totalPrice.toFixed(2).replace(".", ",")}</p>
                   {!changeStyle && (
                     <div className="pizzaPanierBtn">
                       <button className="pizzaPanierModifier" onClick={() => navigate(`/${pizza.id}`)}>

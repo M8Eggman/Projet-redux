@@ -5,14 +5,14 @@ import { useState } from "react";
 import "./Commande.css";
 
 export default function Commande() {
-  const cart = useSelector((state) => state.pizza.panier);
-  const { reduction } = useSelector((state) => state.reduction); // 👈
+  const panier = useSelector((state) => state.pizza.panier);
+  const { reduction } = useSelector((state) => state.reduction);
   const [coupon, setCoupon] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
 
-  const total = cart.reduce((acc, pizza) => acc + pizza.price, 0);
+  const total = panier.reduce((acc, pizza) => acc + pizza.totalPrice, 0);
   const montantReduction = total * (reduction / 100);
   const totalApresReduction = total * ((100 - reduction) / 100);
 
@@ -34,7 +34,7 @@ export default function Commande() {
           <div className="line"></div>
         </div>
 
-        {cart.length === 0 ? (
+        {panier.length === 0 ? (
           <p className="emptyMessage">Ton panier est vide.</p>
         ) : (
           <>
@@ -46,10 +46,10 @@ export default function Commande() {
                 </tr>
               </thead>
               <tbody>
-                {cart.map((pizza, i) => (
+                {panier.map((pizza, i) => (
                   <tr key={i}>
                     <td>{pizza.name}</td>
-                    <td>{pizza.price.toFixed(2)} €</td>
+                    <td>{pizza.totalPrice.toFixed(2)} €</td>
                   </tr>
                 ))}
               </tbody>
