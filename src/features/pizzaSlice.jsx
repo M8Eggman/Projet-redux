@@ -25,7 +25,7 @@ const pizzaSlice = createSlice({
     changerQuantite: (state, action) => {
       const pizza = state.panier.find((p) => p.id === action.payload.id);
       pizza.quantity += action.payload.nbr;
-      if (pizza.quantity + action.payload.nbr <= 0) {
+      if (pizza.quantity <= 0) {
         state.panier = state.panier.filter((pizza) => pizza.id !== action.payload.id);
       }
     },

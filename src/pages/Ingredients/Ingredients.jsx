@@ -90,12 +90,7 @@ export default function Ingredients() {
                     <li key={ing.name}>
                       <span className="ingredientIcon">{/* ajout d'une icone si jai pas la flemme */}</span>
                       <span className="ingredientName">{ing.name}</span>
-                      <button
-                        className="ingredientButton"
-                        onClick={() => {
-                          handleIngredientQuantity(ing.name, -1);
-                        }}
-                        disabled={ing.quantity <= 0}>
+                      <button className="ingredientButton" onClick={() => handleIngredientQuantity(ing.name, -1)} disabled={ing.quantity <= 0}>
                         <FontAwesomeIcon icon={faMinus} />
                       </button>
                       <span className="ingredientQuantity">{ing.quantity}</span>
