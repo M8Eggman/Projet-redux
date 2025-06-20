@@ -11,11 +11,9 @@ export default function Commande() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
-  const total = panier.reduce((acc, pizza) => acc + pizza.totalPrice, 0);
+  const total = panier.reduce((acc, pizza) => acc + pizza.totalPrice, 0) + 1.99;
   const montantReduction = total * (reduction / 100);
   const totalApresReduction = total * ((100 - reduction) / 100);
-
 
   const handleValider = () => {
     navigate("/remerciement");
@@ -52,36 +50,33 @@ export default function Commande() {
                     <td>{pizza.totalPrice.toFixed(2)} €</td>
                   </tr>
                 ))}
+                <tr>
+                  <td>Livraison</td>
+                  <td>1,99€</td>
+                </tr>
               </tbody>
               <tfoot>
-            <tr>
-              <td>Total</td>
-              <td>{total.toFixed(2)} €</td>
-            </tr>
-            {reduction > 0 && (
-              <>
                 <tr>
-                  <td>Réduction</td>
-                  <td>-{montantReduction.toFixed(2)} €</td>
+                  <td>Total</td>
+                  <td>{total.toFixed(2)} €</td>
                 </tr>
-                <tr>
-                  <td>Total avec réduction</td>
-                  <td>{totalApresReduction.toFixed(2)} €</td>
-                </tr>
-              </>
-            )}
-          </tfoot>
-
+                {reduction > 0 && (
+                  <>
+                    <tr>
+                      <td>Réduction</td>
+                      <td>-{montantReduction.toFixed(2)} €</td>
+                    </tr>
+                    <tr>
+                      <td>Total avec réduction</td>
+                      <td>{totalApresReduction.toFixed(2)} €</td>
+                    </tr>
+                  </>
+                )}
+              </tfoot>
             </table>
 
             <div className="commandeCouponZone">
-              <input
-                className="pizzaPanierCoupon"
-                type="text"
-                value={coupon}
-                onChange={(e) => setCoupon(e.target.value)}
-                placeholder="Code promo"
-              />
+              <input className="pizzaPanierCoupon" type="text" value={coupon} onChange={(e) => setCoupon(e.target.value)} placeholder="Code promo" />
               <button className="btnValider" onClick={handleCoupon}>
                 Appliquer le code
               </button>
