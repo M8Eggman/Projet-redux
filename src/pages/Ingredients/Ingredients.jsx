@@ -15,14 +15,19 @@ export default function Ingredients() {
 
   const pizzas = useSelector((state) => state.pizza.allPizzas);
   const panier = useSelector((state) => state.pizza.panier);
+
   const selectedPizza = pizzas.find((pizza) => pizza.id === id) || panier.find((pizza) => pizza.id === parseInt(id));
 
-  // si l'id est un int choisis le mode modifier sinon le mode ajouter
-  const mode = parseInt(id) ? "modifier" : "ajouter";
   // Ajoute quantity a tout les ingredients, seulement si selectedPizza existe
   const [ingredients, setIngredients] = useState(
     selectedPizza && selectedPizza.ingredients ? selectedPizza.ingredients.map((i) => ({ ...i, quantity: i.quantity + 1 ? i.quantity : 1 })) : []
   );
+
+  const ingredientsSup = ingredients.filter((i) => i.quantity > 1);
+  const ingredientsSans = ingredients.filter((i) => i.quantity === 0);
+
+  // si l'id est un int choisis le mode modifier sinon le mode ajouter
+  const mode = parseInt(id) ? "modifier" : "ajouter";
 
   function handleIngredientQuantity(name, nbr) {
     setIngredients((prev) => prev.map((i) => (i.name === name ? { ...i, quantity: i.quantity + nbr } : i)));
@@ -52,6 +57,28 @@ export default function Ingredients() {
               <p>
                 {selectedPizza.description} <span>€{selectedPizza.price.toFixed(2).replace(".", ",")}</span>
               </p>
+              {ingredientsSup.length > 0 && (
+                <p className="panierSuppP">
+                  <span className="panierSuppSpan">Supp.</span>
+                  {ingredientsSup.map((ing, index) => (
+                    <span>
+                      {index > 0 && ","}
+                      {ing.name}
+                    </span>
+                  ))}
+                </p>
+              )}
+              {ingredientsSans.length > 0 && (
+                <p className="panierSansP">
+                  <span className="panierSansSpan">Sans</span>
+                  {ingredientsSans.map((ing, index) => (
+                    <span>
+                      {index > 0 && ","}
+                      {ing.name}
+                    </span>
+                  ))}
+                </p>
+              )}
               <div className="">
                 <div className="ingredientsListHeader">
                   <h3>Ingrédients</h3> <FontAwesomeIcon icon={faChevronUp} />
@@ -80,8 +107,6 @@ export default function Ingredients() {
               <div className="ingredientAjouterPanier">
                 <button
                   onClick={() => {
-                    const ingredientsSup = ingredients.filter((i) => i.quantity > 1);
-                    const ingredientsSans = ingredients.filter((i) => i.quantity === 0);
                     const pizzaAJour = {
                       ...selectedPizza,
                       ingredients: ingredients,

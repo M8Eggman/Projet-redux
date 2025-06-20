@@ -43,8 +43,11 @@ export default function PizzaPanier({ changeStyle }) {
                   {pizza.ingredientsSup.length > 0 && (
                     <p className="panierSuppP">
                       <span className="panierSuppSpan">Supp.</span>
-                      {pizza.ingredientsSup.map((ing) => (
-                        <span>{ing.name}</span>
+                      {pizza.ingredientsSup.map((ing, index) => (
+                        <span>
+                          {index > 0 && ","}
+                          {ing.name}
+                        </span>
                       ))}
                     </p>
                   )}
@@ -52,7 +55,10 @@ export default function PizzaPanier({ changeStyle }) {
                     <p className="panierSansP">
                       <span className="panierSansSpan">Sans</span>
                       {pizza.ingredientsSans.map((ing) => (
-                        <span>{ing.name}</span>
+                        <span>
+                          {index > 0 && ","}
+                          {ing.name}
+                        </span>
                       ))}
                     </p>
                   )}

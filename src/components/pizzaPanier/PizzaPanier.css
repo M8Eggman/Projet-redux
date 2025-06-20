@@ -20,7 +20,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .pizzaPanierAllPizzas {
-  max-height: 270px;
+  max-height: 300px;
   overflow-y: auto;
 }
 .pizzaPanierPizza {
@@ -28,15 +28,20 @@
   justify-content: space-between;
   align-items: center;
   border-block: 1px dashed gray;
-  padding-inline: 10px;
-  height: 90px;
+  padding: 10px;
+  height: 100px;
   box-sizing: border-box;
+}
+.pizzaPanierPizzadetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .pizzaPanierPizzadetails > p:first-of-type {
   font-weight: bold;
   font-size: 1rem;
   margin: 0;
-  margin-bottom: 2px;
 }
 .pizzaPanierPizzadetails > p:last-of-type {
   color: grey;
@@ -83,6 +88,8 @@
 .pizzaPanierPrice {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   align-items: flex-end;
   gap: 25px;
 }
@@ -91,8 +98,10 @@
   font-size: 1.1rem;
   margin: 0;
 }
+.pizzaPanierBtn {
+  display: flex;
+}
 .pizzaPanierModifier {
-  display: inline;
   background: none;
   border: none;
   font-size: 0.8rem;
@@ -105,7 +114,6 @@
   text-decoration: underline solid black;
 }
 .pizzaPanierSupprimer {
-  display: inline;
   background: none;
   border: none;
   color: #c8102e;
@@ -225,27 +233,32 @@
 }
 .panierSuppP,
 .panierSansP {
-  margin: 0;
+  margin: 0 !important;
+  height: auto !important;
   font-size: 0.75rem !important;
   display: flex;
   align-items: flex-end;
   gap: 4px;
+  display: inline-block !important;
 }
 .panierSuppSpan {
-  color: #70a401;
+  color: #70a401 !important;
   font-weight: 500;
   margin-right: 2px;
+  display: inline-block !important;
 }
 .panierSansSpan {
-  color: #c8102e;
+  color: #c8102e !important;
   font-weight: 500;
   margin-right: 2px;
+  display: inline-block !important;
 }
 .panierSuppP span:not(.panierSuppSpan),
 .panierSansP span:not(.panierSansSpan) {
   color: #74747a;
   font-weight: 400;
   margin-right: 4px;
+  display: inline-block !important;
 }
 @media (max-width: 992px) {
   .pizzaPanier {
