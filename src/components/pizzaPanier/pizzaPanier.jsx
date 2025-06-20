@@ -87,7 +87,7 @@ export default function PizzaPanier({ changeStyle }) {
                       )}
                     </div>
                     <div className="pizzaPanierPrice">
-                      <p>€{pizza.totalPrice.toFixed(2).replace(".", ",")}</p>
+                      <p>€{(pizza.totalPrice * pizza.quantity).toFixed(2).replace(".", ",")}</p>
                       {!changeStyle && (
                         <div className="pizzaPanierBtn">
                           <button className="pizzaPanierModifier" onClick={() => navigate(`/${pizza.id}`)}>

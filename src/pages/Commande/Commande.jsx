@@ -11,7 +11,7 @@ export default function Commande() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const total = panier.reduce((acc, pizza) => acc + pizza.totalPrice, 0) + 1.99;
+  const total = panier.reduce((acc, pizza) => acc + pizza.totalPrice * pizza.quantity, 0) + 1.99;
   const montantReduction = total * (reduction / 100);
   const totalApresReduction = total * ((100 - reduction) / 100);
 
@@ -47,7 +47,7 @@ export default function Commande() {
                 {panier.map((pizza, i) => (
                   <tr key={i}>
                     <td>{pizza.name}</td>
-                    <td>{pizza.totalPrice.toFixed(2)} €</td>
+                    <td>{(pizza.totalPrice * pizza.quantity).toFixed(2)} €</td>
                   </tr>
                 ))}
                 <tr>
