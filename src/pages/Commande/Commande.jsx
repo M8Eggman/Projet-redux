@@ -46,7 +46,7 @@ export default function Commande() {
               <tbody>
                 {panier.map((pizza, i) => (
                   <tr key={i}>
-                    <td>{pizza.name}</td>
+                    <td>{pizza.name} x {pizza.quantity}</td>
                     <td>{(pizza.totalPrice * pizza.quantity).toFixed(2)} €</td>
                   </tr>
                 ))}

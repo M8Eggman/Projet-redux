@@ -26,7 +26,6 @@
 .pizzaPanierPizza {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   border-block: 1px dashed gray;
   padding: 10px;
   min-height: 100px;
@@ -36,12 +35,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100%;
 }
 .pizzaPanierPizzadetails > p:first-of-type {
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 0;
+  color: black !important;
+  font-weight: bold !important;
+  font-size: 1rem !important;
+  margin: 0 !important;
 }
 .pizzaPanierPizzadetails > p:last-of-type {
   color: grey;
@@ -89,9 +88,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100%;
   align-items: flex-end;
-  gap: 25px;
 }
 .pizzaPanierPrice > p {
   font-weight: bold;
