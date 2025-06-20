@@ -41,7 +41,7 @@ export default function PizzaPanier({ changeStyle }) {
     <>
       {afficherPanier && (
         <div className={changeStyle ? "pizzaPanier pizzaPanierDetails" : "pizzaPanier pizzaPanierAccueil"}>
-          <button className="pizzaPanierFermerBtn" onClick={() => setAffichePanier(false)} aria-label="Fermer le panier">
+          <button className="pizzaPanierFermerBtn" onClick={() => setAffichePanier(false)}>
             <FontAwesomeIcon icon={faXmark} />
           </button>
           <div className="pizzaPanierHeader">
