@@ -4,7 +4,7 @@ import { faMinus, faPlus, faChevronDown, faChevronLeft, faChevronUp, faXmark } f
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { ajouterPanier, modifierPizzaPanier } from "../../features/pizzaSlice";
+import { ajouterPanier, ajoutIngredient, modifierPizzaPanier } from "../../features/pizzaSlice";
 import PizzaPanier from "../../components/pizzaPanier/pizzaPanier";
 
 export default function Ingredients() {
@@ -61,7 +61,12 @@ export default function Ingredients() {
                     <li key={ing.name}>
                       <span className="ingredientIcon">{/* ajout d'une icone si jai pas la flemme */}</span>
                       <span className="ingredientName">{ing.name}</span>
-                      <button className="ingredientButton" onClick={() => handleIngredientQuantity(ing.name, -1)} disabled={ing.quantity <= 0}>
+                      <button
+                        className="ingredientButton"
+                        onClick={() => {
+                          handleIngredientQuantity(ing.name, -1);
+                        }}
+                        disabled={ing.quantity <= 0}>
                         <FontAwesomeIcon icon={faMinus} />
                       </button>
                       <span className="ingredientQuantity">{ing.quantity}</span>
@@ -75,11 +80,15 @@ export default function Ingredients() {
               <div className="ingredientAjouterPanier">
                 <button
                   onClick={() => {
-                    if (mode === "ajouter") {
-                      dispatch(ajouterPanier({ ...selectedPizza, ingredients: ingredients }));
-                    } else {
-                      dispatch(modifierPizzaPanier({ ...selectedPizza, ingredients: ingredients }));
-                    }
+                    const ingredientsSup = ingredients.filter((i) => i.quantity > 1);
+                    const ingredientsSans = ingredients.filter((i) => i.quantity === 0);
+                    const pizzaAJour = {
+                      ...selectedPizza,
+                      ingredients: ingredients,
+                      ingredientsSup,
+                      ingredientsSans,
+                    };
+                    mode === "ajouter" ? dispatch(ajouterPanier(pizzaAJour)) : dispatch(modifierPizzaPanier(pizzaAJour));
                     navigate("/");
                   }}>
                   Ajouter au panier €{selectedPizza.price.toFixed(2).replace(".", ",")}

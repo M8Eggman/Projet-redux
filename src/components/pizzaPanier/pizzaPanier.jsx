@@ -40,7 +40,22 @@ export default function PizzaPanier({ changeStyle }) {
               <div key={index} className="pizzaPanierPizza" style={changeStyle ? { alignItems: "flex-start", paddingTop: "15px", height: "70px" } : {}}>
                 <div className="pizzaPanierPizzadetails">
                   <p>{pizza.name}</p>
-                  <p>Medium Classic</p>
+                  {pizza.ingredientsSup.length > 0 && (
+                    <p className="panierSuppP">
+                      <span className="panierSuppSpan">Supp.</span>
+                      {pizza.ingredientsSup.map((ing) => (
+                        <span>{ing.name}</span>
+                      ))}
+                    </p>
+                  )}
+                  {pizza.ingredientsSans.length > 0 && (
+                    <p className="panierSansP">
+                      <span className="panierSansSpan">Sans</span>
+                      {pizza.ingredientsSans.map((ing) => (
+                        <span>{ing.name}</span>
+                      ))}
+                    </p>
+                  )}
                   {!changeStyle && (
                     <div className="pizzaPanierQuantity">
                       <button onClick={() => dispatch(changerQuantite({ id: pizza.id, nbr: -1 }))}>

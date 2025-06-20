@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import pizzas from "../data/pizzas.json";
 
 const initialState = {
-  allPizzas: pizzas.map((pizza, index) => {
-    return { ...pizza, id: pizza.name };
+  allPizzas: pizzas.map((pizza) => {
+    return { ...pizza, id: pizza.name, ingredientsSup: [], ingredientsSans: [] };
   }),
   panier: [],
 };
@@ -35,5 +35,5 @@ const pizzaSlice = createSlice({
   },
 });
 
-export const { ajouterPanier, supprimerPanier, changerQuantite, modifierPizzaPanier, resetPanier } = pizzaSlice.actions;
+export const { ajouterPanier, supprimerPanier, changerQuantite, modifierPizzaPanier, resetPanier, ajoutIngredient } = pizzaSlice.actions;
 export const pizzaReducer = pizzaSlice.reducer;
