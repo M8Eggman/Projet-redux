@@ -1,10 +1,9 @@
-import React from "react";
-import "./Footer.css"; // Si tu veux séparer le style
+import "./Footer.css"; 
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} PizzaHUT — Projet-MoelenGeek.</p>
+      <p>&copy; 2025 PizzaHUT — Projet-MoelenGeek.</p>
     </footer>
   );
 }

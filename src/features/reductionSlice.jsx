@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   code: "",
-  reduction: 0, // Pourcentage de réduction
+  reduction: 0, // en pourcentage
 };
 
 const reductionSlice = createSlice({

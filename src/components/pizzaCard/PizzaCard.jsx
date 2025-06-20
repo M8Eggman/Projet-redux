@@ -1,9 +1,7 @@
-import { useDispatch } from "react-redux";
 import "./PizzaCard.css";
 import { useNavigate } from "react-router-dom";
 
 export default function PizzaCard({ pizza }) {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
     <div className="pizzaCard" onClick={() => navigate(`/${pizza.id}`)}>

@@ -13,9 +13,11 @@ export default function Ingredients() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // import des pizza et du panier
   const pizzas = useSelector((state) => state.pizza.allPizzas);
   const panier = useSelector((state) => state.pizza.panier);
 
+  // trouve la pizza a afficher dans la page
   const selectedPizza = pizzas.find((pizza) => pizza.id === id) || panier.find((pizza) => pizza.id === parseInt(id));
 
   // Ajoute quantity a tout les ingredients, seulement si selectedPizza existe
@@ -23,14 +25,17 @@ export default function Ingredients() {
     selectedPizza && selectedPizza.ingredients ? selectedPizza.ingredients.map((i) => ({ ...i, quantity: i.quantity + 1 ? i.quantity : 1 })) : []
   );
 
+  // Détermine tout les ingrédient qui sont ajouté au retiré
   const ingredientsSup = ingredients.filter((i) => i.quantity > 1);
   const ingredientsSans = ingredients.filter((i) => i.quantity === 0);
 
-  const totalPrice = selectedPizza.price + ingredients.filter((ing) => ing.quantity > 1).reduce((sum, ing) => sum + ing.price, 0);
+  // calcule le prix total
+  const totalPrice = selectedPizza.price + ingredientsSup.reduce((sum, ing) => sum + ing.price, 0);
 
-  // si l'id est un int choisis le mode modifier sinon le mode ajouter
+  // Si l'id est un int choisis le mode modifier sinon le mode ajouter
   const mode = parseInt(id) ? "modifier" : "ajouter";
 
+  // Change la quantité des ingredient de nbr (-1, +1)
   function handleIngredientQuantity(name, nbr) {
     setIngredients((prev) => prev.map((i) => (i.name === name ? { ...i, quantity: i.quantity + nbr } : i)));
   }

@@ -46,7 +46,9 @@ export default function Commande() {
               <tbody>
                 {panier.map((pizza, i) => (
                   <tr key={i}>
-                    <td>{pizza.name} x {pizza.quantity}</td>
+                    <td>
+                      {pizza.name} x {pizza.quantity}
+                    </td>
                     <td>{(pizza.totalPrice * pizza.quantity).toFixed(2)} €</td>
                   </tr>
                 ))}
@@ -74,7 +76,6 @@ export default function Commande() {
                 )}
               </tfoot>
             </table>
-
             <div className="commandeCouponZone">
               <input className="pizzaPanierCoupon" type="text" value={coupon} onChange={(e) => setCoupon(e.target.value)} placeholder="Code promo" />
               <button className="btnValider" onClick={handleCoupon}>
