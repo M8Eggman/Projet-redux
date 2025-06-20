@@ -59,11 +59,11 @@ export default function Ingredients() {
               </p>
               {ingredientsSup.length > 0 && (
                 <p className="panierSuppP">
-                  <span className="panierSuppSpan">Supp.</span>
-                  {ingredientsSup.map((ing, index) => (
-                    <span>
-                      {index > 0 && ","}
+                  <span className="panierSuppSpan">Supp</span>
+                  {ingredientsSup.map((ing, idx) => (
+                    <span key={ing.name}>
                       {ing.name}
+                      {idx < ingredientsSup.length - 1 && ingredientsSup.length > 1 && ","}
                     </span>
                   ))}
                 </p>
@@ -71,10 +71,10 @@ export default function Ingredients() {
               {ingredientsSans.length > 0 && (
                 <p className="panierSansP">
                   <span className="panierSansSpan">Sans</span>
-                  {ingredientsSans.map((ing, index) => (
-                    <span>
-                      {index > 0 && ","}
+                  {ingredientsSans.map((ing, idx) => (
+                    <span key={ing.name}>
                       {ing.name}
+                      {idx < ingredientsSans.length - 1 && ingredientsSans.length > 1 && ","}
                     </span>
                   ))}
                 </p>

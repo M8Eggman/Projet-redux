@@ -29,14 +29,14 @@
   align-items: center;
   border-block: 1px dashed gray;
   padding: 10px;
-  height: 100px;
+  min-height: 100px;
   box-sizing: border-box;
 }
 .pizzaPanierPizzadetails {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  min-height: 100%;
 }
 .pizzaPanierPizzadetails > p:first-of-type {
   font-weight: bold;
@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  min-height: 100%;
   align-items: flex-end;
   gap: 25px;
 }
@@ -238,27 +238,26 @@
   font-size: 0.75rem !important;
   display: flex;
   align-items: flex-end;
-  gap: 4px;
-  display: inline-block !important;
+  column-gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 5px !important;
 }
 .panierSuppSpan {
   color: #70a401 !important;
   font-weight: 500;
-  margin-right: 2px;
   display: inline-block !important;
 }
 .panierSansSpan {
   color: #c8102e !important;
   font-weight: 500;
-  margin-right: 2px;
   display: inline-block !important;
 }
 .panierSuppP span:not(.panierSuppSpan),
 .panierSansP span:not(.panierSansSpan) {
   color: #74747a;
   font-weight: 400;
-  margin-right: 4px;
   display: inline-block !important;
+  line-break: strict;
 }
 @media (max-width: 992px) {
   .pizzaPanier {
